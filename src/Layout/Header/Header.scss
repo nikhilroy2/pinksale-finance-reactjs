@@ -1,0 +1,21 @@
+@mixin flex-center-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header#Header {
+  nav#HeaderNav {
+    height: 70px;
+    padding: 0px 15px;
+    @include flex-center-all();
+    .left_side,
+    .right_side,
+    .logo_link {
+      @include flex-center-all();
+    }
+    button,
+    a {
+      cursor: pointer;
+    }
+  }
+}

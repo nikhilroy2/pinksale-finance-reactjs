@@ -1,0 +1,22 @@
+// .............................Global Styleing ..............
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+nav {
+  margin: 0;
+  padding: 0;
+}
+body {
+  // variables .........
+
+  --bg-color: #faf9fa;
+
+  // styling .......
+  background: var(--bg-color);
+}
+
+// .............................Global Styleing ..............End
