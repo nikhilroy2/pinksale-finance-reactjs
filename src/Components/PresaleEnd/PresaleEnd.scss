@@ -1,0 +1,74 @@
+#PresaleEnd {
+  font-size: 14px;
+  @mixin wrapper_mix {
+    color: var(--main-text-color);
+    background: var(--main-background-color);
+    border: 1px solid var(--main-border-color);
+    padding: 24px;
+  }
+  .end_counter_wrapper {
+    @include wrapper_mix;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    .end_presale {
+      text-align: center;
+      strong {
+        font-weight: normal;
+        margin-bottom: 12px;
+        display: inline-block;
+        font-size: 14px;
+      }
+      .dateCounter {
+        span {
+          color: var(--clock-text-color);
+          background-color: var(--red-button-bg-color) !important;
+          padding: 0.5rem;
+          font-weight: bold;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    .presale_range {
+      width: 100%;
+      height: 15px;
+      background: rgba(72, 199, 116, 0.5);
+      border-radius: 100px;
+      transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      .range_position {
+        position: absolute;
+        width: 48.3975%;
+        height: 15px;
+        background-color: rgb(72, 199, 116);
+        top: 0;
+        left: 0;
+      }
+    }
+    .range_info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+    }
+  }
+  .sale_info_wrapper {
+    border-radius: 4px;
+    @include wrapper_mix;
+    .sale_list {
+      .sale_list_item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-color);
+        padding: 8px 0px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        .status {
+          color: #f95192 !important;
+        }
+      }
+    }
+  }
+}

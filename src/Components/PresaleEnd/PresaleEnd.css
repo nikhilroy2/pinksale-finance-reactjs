@@ -1,0 +1,94 @@
+#PresaleEnd {
+  font-size: 14px;
+}
+
+#PresaleEnd .end_counter_wrapper {
+  color: var(--main-text-color);
+  background: var(--main-background-color);
+  border: 1px solid var(--main-border-color);
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+}
+
+#PresaleEnd .end_counter_wrapper .end_presale {
+  text-align: center;
+}
+
+#PresaleEnd .end_counter_wrapper .end_presale strong {
+  font-weight: normal;
+  margin-bottom: 12px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+#PresaleEnd .end_counter_wrapper .end_presale .dateCounter span {
+  color: var(--clock-text-color);
+  background-color: var(--red-button-bg-color) !important;
+  padding: 0.5rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+#PresaleEnd .end_counter_wrapper .presale_range {
+  width: 100%;
+  height: 15px;
+  background: rgba(72, 199, 116, 0.5);
+  border-radius: 100px;
+  -webkit-transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
+  transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#PresaleEnd .end_counter_wrapper .presale_range .range_position {
+  position: absolute;
+  width: 48.3975%;
+  height: 15px;
+  background-color: #48c774;
+  top: 0;
+  left: 0;
+}
+
+#PresaleEnd .end_counter_wrapper .range_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+#PresaleEnd .sale_info_wrapper {
+  border-radius: 4px;
+  color: var(--main-text-color);
+  background: var(--main-background-color);
+  border: 1px solid var(--main-border-color);
+  padding: 24px;
+}
+
+#PresaleEnd .sale_info_wrapper .sale_list .sale_list_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--text-color);
+  padding: 8px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#PresaleEnd .sale_info_wrapper .sale_list .sale_list_item .status {
+  color: #f95192 !important;
+}
+/*# sourceMappingURL=PresaleEnd.css.map */

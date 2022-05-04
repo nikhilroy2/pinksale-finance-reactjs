@@ -53,11 +53,36 @@ body {
   // styling .......
   background: var(--bg-color);
 }
-
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 // .............................Global Styleing ..............End
 
-// button styling
+// ...........Section styling ..........
+.section_wrapper {
+  max-width: 1170px;
+  margin: 0px auto;
+  &.flex_section {
+    display: flex;
+  }
+  .section_lg_grow {
+    width: 100%;
+  }
+  .section_sm_item {
+    min-width: 380px;
+  }
+}
+// ...........Section styling ..........End
 
+// button styling
+button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
 .nav_btn {
   border: none;
   outline: none;
@@ -72,12 +97,84 @@ body {
   color: var(--red-button-text-color);
   margin-right: 15px;
   font-weight: bold;
-  svg, img {
+  svg,
+  img {
     margin-right: 5px;
   }
   &.nav_btn_light {
     background: var(--network-button-bg-color);
     color: var(--text-color);
     font-size: 14px;
+  }
+}
+
+.form_action_btn {
+  margin-top: 1rem;
+}
+.form_btn {
+  border-color: rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+  height: 32px;
+  padding: 4px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  &.hidden_btn {
+    color: var(--disabled-text-color);
+    background: var(--disabled-bg);
+  }
+}
+.text_alert {
+  background-color: var(--alert-warning-bg-color);
+  border: var(--alert-warning-border);
+  color: var(--main-text-color);
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+// form classes
+
+.form_control {
+  position: relative;
+  margin-top: 1rem;
+  .form_label,
+  .input_control {
+    display: block;
+    padding-bottom: 0.5em;
+  }
+  .form_label {
+    font-weight: 400;
+  }
+  .input_control {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 0;
+    padding: 4.5px 11px;
+    color: rgba(0, 0, 0, 0.8509803921568627);
+    font-size: 14px;
+    line-height: 1.5715;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    background-image: none;
+    border: var(--input-border);
+    border-radius: 4px;
+    box-shadow: none;
+    outline: none;
+    &:focus {
+      border-color: #f95192;
+      box-shadow: 0 0 0 0.125em rgba(249, 81, 146, 0.25);
+    }
+  }
+  .input_helper {
+    position: absolute;
+    right: 5px;
+    bottom: 7px;
+    color: #f95192;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
   }
 }
