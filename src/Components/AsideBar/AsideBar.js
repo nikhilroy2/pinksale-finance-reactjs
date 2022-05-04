@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AsideBar.css";
 function AsideBar(props) {
   // const aside_object = [
@@ -10,6 +10,20 @@ function AsideBar(props) {
 
   //     }
   // ]
+
+  // Launchpads handle
+
+  const [isLaunchpadsDropdown, setIsLaunchpadsDropdown] = useState(false);
+
+  // PinkPad Dropdown
+  const [isPinkPadDropdown, setPinkPadDropdown] = useState(false);
+
+  // PinkLock Dropdown
+  const [isPinkLockDropdown, setPinkLockDropdown] = useState(false);
+
+  // PinkAirdrop
+  const [isPinkAirdropDropdown, setPinkAirdropDropdown] = useState(false);
+
   return (
     <aside id="AsideBar">
       <div className="wrapper">
@@ -33,7 +47,10 @@ function AsideBar(props) {
           </li>
 
           <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
+            <button
+              className="aside_list_action"
+              onClick={() => setIsLaunchpadsDropdown(!isLaunchpadsDropdown)}
+            >
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -47,6 +64,111 @@ function AsideBar(props) {
                 <path d="M864 736c0-111.6-65.4-208-160-252.9V317.3c0-15.1-5.3-29.7-15.1-41.2L536.5 95.4C530.1 87.8 521 84 512 84s-18.1 3.8-24.5 11.4L335.1 276.1a63.97 63.97 0 0 0-15.1 41.2v165.8C225.4 528 160 624.4 160 736h156.5c-2.3 7.2-3.5 15-3.5 23.8 0 22.1 7.6 43.7 21.4 60.8a97.2 97.2 0 0 0 43.1 30.6c23.1 54 75.6 88.8 134.5 88.8 29.1 0 57.3-8.6 81.4-24.8 23.6-15.8 41.9-37.9 53-64a97 97 0 0 0 43.1-30.5 97.52 97.52 0 0 0 21.4-60.8c0-8.4-1.1-16.4-3.1-23.8H864zM762.3 621.4c9.4 14.6 17 30.3 22.5 46.6H700V558.7a211.6 211.6 0 0 1 62.3 62.7zM388 483.1V318.8l124-147 124 147V668H388V483.1zM239.2 668c5.5-16.3 13.1-32 22.5-46.6 16.3-25.2 37.5-46.5 62.3-62.7V668h-84.8zm388.9 116.2c-5.2 3-11.2 4.2-17.1 3.4l-19.5-2.4-2.8 19.4c-5.4 37.9-38.4 66.5-76.7 66.5-38.3 0-71.3-28.6-76.7-66.5l-2.8-19.5-19.5 2.5a27.7 27.7 0 0 1-17.1-3.5c-8.7-5-14.1-14.3-14.1-24.4 0-10.6 5.9-19.4 14.6-23.8h231.3c8.8 4.5 14.6 13.3 14.6 23.8-.1 10.2-5.5 19.6-14.2 24.5zM464 400a48 48 0 1 0 96 0 48 48 0 1 0-96 0z" />
               </svg>
               Launchpads
+            </button>
+            <i
+              className={`fa-solid fa-angle-down ${
+                isLaunchpadsDropdown ? "active_icon" : ""
+              }`}
+            ></i>
+            <div className="dropdown_list"></div>
+          </li>
+
+          <li className="aside_list_item">
+            <button
+              className="aside_list_action"
+              onClick={() => setPinkPadDropdown(!isPinkPadDropdown)}
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth={0}
+                viewBox="0 0 1024 1024"
+                className="ant-menu-item-icon"
+                height={18}
+                width={18}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M864 736c0-111.6-65.4-208-160-252.9V317.3c0-15.1-5.3-29.7-15.1-41.2L536.5 95.4C530.1 87.8 521 84 512 84s-18.1 3.8-24.5 11.4L335.1 276.1a63.97 63.97 0 0 0-15.1 41.2v165.8C225.4 528 160 624.4 160 736h156.5c-2.3 7.2-3.5 15-3.5 23.8 0 22.1 7.6 43.7 21.4 60.8a97.2 97.2 0 0 0 43.1 30.6c23.1 54 75.6 88.8 134.5 88.8 29.1 0 57.3-8.6 81.4-24.8 23.6-15.8 41.9-37.9 53-64a97 97 0 0 0 43.1-30.5 97.52 97.52 0 0 0 21.4-60.8c0-8.4-1.1-16.4-3.1-23.8H864zM762.3 621.4c9.4 14.6 17 30.3 22.5 46.6H700V558.7a211.6 211.6 0 0 1 62.3 62.7zM388 483.1V318.8l124-147 124 147V668H388V483.1zM239.2 668c5.5-16.3 13.1-32 22.5-46.6 16.3-25.2 37.5-46.5 62.3-62.7V668h-84.8zm388.9 116.2c-5.2 3-11.2 4.2-17.1 3.4l-19.5-2.4-2.8 19.4c-5.4 37.9-38.4 66.5-76.7 66.5-38.3 0-71.3-28.6-76.7-66.5l-2.8-19.5-19.5 2.5a27.7 27.7 0 0 1-17.1-3.5c-8.7-5-14.1-14.3-14.1-24.4 0-10.6 5.9-19.4 14.6-23.8h231.3c8.8 4.5 14.6 13.3 14.6 23.8-.1 10.2-5.5 19.6-14.2 24.5zM464 400a48 48 0 1 0 96 0 48 48 0 1 0-96 0z" />
+              </svg>
+              PinkPad
+            </button>
+            <i
+              className={`fa-solid fa-angle-down ${
+                isPinkPadDropdown ? "active_icon" : ""
+              }`}
+            ></i>
+            <div className="dropdown_list"></div>
+          </li>
+          <li className="aside_list_item">
+            <button
+              className="aside_list_action"
+              onClick={() => setPinkLockDropdown(!isPinkLockDropdown)}
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth={0}
+                viewBox="0 0 1024 1024"
+                className="ant-menu-item-icon"
+                height={18}
+                width={18}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M864 736c0-111.6-65.4-208-160-252.9V317.3c0-15.1-5.3-29.7-15.1-41.2L536.5 95.4C530.1 87.8 521 84 512 84s-18.1 3.8-24.5 11.4L335.1 276.1a63.97 63.97 0 0 0-15.1 41.2v165.8C225.4 528 160 624.4 160 736h156.5c-2.3 7.2-3.5 15-3.5 23.8 0 22.1 7.6 43.7 21.4 60.8a97.2 97.2 0 0 0 43.1 30.6c23.1 54 75.6 88.8 134.5 88.8 29.1 0 57.3-8.6 81.4-24.8 23.6-15.8 41.9-37.9 53-64a97 97 0 0 0 43.1-30.5 97.52 97.52 0 0 0 21.4-60.8c0-8.4-1.1-16.4-3.1-23.8H864zM762.3 621.4c9.4 14.6 17 30.3 22.5 46.6H700V558.7a211.6 211.6 0 0 1 62.3 62.7zM388 483.1V318.8l124-147 124 147V668H388V483.1zM239.2 668c5.5-16.3 13.1-32 22.5-46.6 16.3-25.2 37.5-46.5 62.3-62.7V668h-84.8zm388.9 116.2c-5.2 3-11.2 4.2-17.1 3.4l-19.5-2.4-2.8 19.4c-5.4 37.9-38.4 66.5-76.7 66.5-38.3 0-71.3-28.6-76.7-66.5l-2.8-19.5-19.5 2.5a27.7 27.7 0 0 1-17.1-3.5c-8.7-5-14.1-14.3-14.1-24.4 0-10.6 5.9-19.4 14.6-23.8h231.3c8.8 4.5 14.6 13.3 14.6 23.8-.1 10.2-5.5 19.6-14.2 24.5zM464 400a48 48 0 1 0 96 0 48 48 0 1 0-96 0z" />
+              </svg>
+              PinkLock
+            </button>
+            <i
+              className={`fa-solid fa-angle-down ${
+                isPinkLockDropdown ? "active_icon" : ""
+              }`}
+            ></i>
+            <div className="dropdown_list"></div>
+          </li>
+
+          <li className="aside_list_item">
+            <button
+              className="aside_list_action"
+              onClick={() => setPinkAirdropDropdown(!isPinkAirdropDropdown)}
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth={0}
+                viewBox="0 0 1024 1024"
+                className="ant-menu-item-icon"
+                height={18}
+                width={18}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M864 736c0-111.6-65.4-208-160-252.9V317.3c0-15.1-5.3-29.7-15.1-41.2L536.5 95.4C530.1 87.8 521 84 512 84s-18.1 3.8-24.5 11.4L335.1 276.1a63.97 63.97 0 0 0-15.1 41.2v165.8C225.4 528 160 624.4 160 736h156.5c-2.3 7.2-3.5 15-3.5 23.8 0 22.1 7.6 43.7 21.4 60.8a97.2 97.2 0 0 0 43.1 30.6c23.1 54 75.6 88.8 134.5 88.8 29.1 0 57.3-8.6 81.4-24.8 23.6-15.8 41.9-37.9 53-64a97 97 0 0 0 43.1-30.5 97.52 97.52 0 0 0 21.4-60.8c0-8.4-1.1-16.4-3.1-23.8H864zM762.3 621.4c9.4 14.6 17 30.3 22.5 46.6H700V558.7a211.6 211.6 0 0 1 62.3 62.7zM388 483.1V318.8l124-147 124 147V668H388V483.1zM239.2 668c5.5-16.3 13.1-32 22.5-46.6 16.3-25.2 37.5-46.5 62.3-62.7V668h-84.8zm388.9 116.2c-5.2 3-11.2 4.2-17.1 3.4l-19.5-2.4-2.8 19.4c-5.4 37.9-38.4 66.5-76.7 66.5-38.3 0-71.3-28.6-76.7-66.5l-2.8-19.5-19.5 2.5a27.7 27.7 0 0 1-17.1-3.5c-8.7-5-14.1-14.3-14.1-24.4 0-10.6 5.9-19.4 14.6-23.8h231.3c8.8 4.5 14.6 13.3 14.6 23.8-.1 10.2-5.5 19.6-14.2 24.5zM464 400a48 48 0 1 0 96 0 48 48 0 1 0-96 0z" />
+              </svg>
+              Pink Airdrop
+            </button>
+            <i
+              className={`fa-solid fa-angle-down ${
+                isPinkAirdropDropdown ? "active_icon" : ""
+              }`}
+            ></i>
+            <div className="dropdown_list"></div>
+          </li>
+
+          <li className="aside_list_item">
+            <a href="#" className="aside_list_action">
+              {" "}
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth={0}
+                viewBox="0 0 1024 1024"
+                className="ant-menu-item-icon"
+                height={18}
+                width={18}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M899.6 276.5L705 396.4 518.4 147.5a8.06 8.06 0 0 0-12.9 0L319 396.4 124.3 276.5c-5.7-3.5-13.1 1.2-12.2 7.9L188.5 865c1.1 7.9 7.9 14 16 14h615.1c8 0 14.9-6 15.9-14l76.4-580.6c.8-6.7-6.5-11.4-12.3-7.9zm-126 534.1H250.3l-53.8-409.4 139.8 86.1L512 252.9l175.7 234.4 139.8-86.1-53.9 409.4zM512 509c-62.1 0-112.6 50.5-112.6 112.6S449.9 734.2 512 734.2s112.6-50.5 112.6-112.6S574.1 509 512 509zm0 160.9c-26.6 0-48.2-21.6-48.2-48.3 0-26.6 21.6-48.3 48.2-48.3s48.2 21.6 48.2 48.3c0 26.6-21.6 48.3-48.2 48.3z" />
+              </svg>{" "}
+              Leaderboard
             </a>
           </li>
 
@@ -62,60 +184,52 @@ function AsideBar(props) {
                 width={18}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M20.995,6.903c-0.033-0.342-0.239-0.643-0.547-0.797l-7.973-4c-0.281-0.143-0.613-0.142-0.895-0.002l-8.027,4 C3.256,6.254,3.051,6.541,3.009,6.871c-0.013,0.097-1.145,9.741,8.541,15.008C11.698,21.96,11.863,22,12.027,22 c0.17,0,0.34-0.043,0.492-0.13C21.826,16.611,21.033,7.297,20.995,6.903z M12.018,19.847c-6.86-4.01-7.14-10.352-7.063-12.205 l7.071-3.523l6.998,3.511C19.029,9.5,18.543,15.873,12.018,19.847z" />
-              </svg>
-              PinkPad
+                <path d="M20.995,6.9c-0.034-0.342-0.241-0.642-0.548-0.795l-8-4c-0.281-0.141-0.613-0.141-0.895,0l-8,4 C3.246,6.259,3.039,6.559,3.005,6.9c-0.011,0.107-0.961,10.767,8.589,15.014C11.723,21.972,11.861,22,12,22 s0.277-0.028,0.406-0.086C21.956,17.667,21.006,7.008,20.995,6.9z M12,19.897C5.231,16.625,4.911,9.642,4.966,7.635L12,4.118 l7.029,3.515C19.066,9.622,18.701,16.651,12,19.897z" />
+                <path d="M11 12.586L8.707 10.293 7.293 11.707 11 15.414 16.707 9.707 15.293 8.293z" />
+              </svg>{" "}
+              Pink Anti-Bot
             </a>
           </li>
 
           <li className="aside_list_item">
             <a href="#" className="aside_list_action">
-              Create PinkPad
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              PinkPad List
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              {" "}
               <svg
                 stroke="currentColor"
                 fill="currentColor"
                 strokeWidth={0}
-                viewBox="0 0 1024 1024"
+                viewBox="0 0 24 24"
                 className="ant-menu-item-icon"
                 height={18}
                 width={18}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M832 464H332V240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v68c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-68c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zm-40 376H232V536h560v304zM484 701v53c0 4.4 3.6 8 8 8h40c4.4 0 8-3.6 8-8v-53a48.01 48.01 0 1 0-56 0z" />
+                <path d="M21.928,11.607c-0.202-0.488-0.635-0.605-0.928-0.633V8c0-1.103-0.897-2-2-2h-6V4.61c0.305-0.274,0.5-0.668,0.5-1.11 C13.5,2.672,12.828,2,12,2s-1.5,0.672-1.5,1.5c0,0.442,0.195,0.836,0.5,1.11V6H5C3.897,6,3,6.897,3,8v2.997 C2.951,11,2.918,11.003,2.918,11.003C2.395,11.04,1.99,11.476,1.99,12v2c0,0.553,0.447,1,1,1H3v5c0,1.103,0.897,2,2,2h14 c1.103,0,2-0.897,2-2v-5c0.553,0,1-0.447,1-1v-1.938C22.011,11.909,21.988,11.753,21.928,11.607z M5,20V8h14l0.001,3.996 C19.001,11.998,19,11.999,19,12v2c0,0.002,0.001,0.003,0.001,0.005L19.002,20H5z" />
+                <ellipse cx="8.5" cy={12} rx="1.5" ry={2} />
+                <ellipse cx="15.5" cy={12} rx="1.5" ry={2} />
+                <path d="M8 16H16V18H8z" />
+              </svg>{" "}
+              Pools Alert
+            </a>
+          </li>
+
+          <li className="aside_list_item">
+            <a href="#" className="aside_list_action">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                class="ant-menu-item-icon"
+                height="18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M296 250c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H296zm184 144H296c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zm-48 458H208V148h560v320c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V108c0-17.7-14.3-32-32-32H168c-17.7 0-32 14.3-32 32v784c0 17.7 14.3 32 32 32h264c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm440-88H728v-36.6c46.3-13.8 80-56.6 80-107.4 0-61.9-50.1-112-112-112s-112 50.1-112 112c0 50.7 33.7 93.6 80 107.4V764H520c-8.8 0-16 7.2-16 16v152c0 8.8 7.2 16 16 16h352c8.8 0 16-7.2 16-16V780c0-8.8-7.2-16-16-16zM646 620c0-27.6 22.4-50 50-50s50 22.4 50 50-22.4 50-50 50-50-22.4-50-50zm180 266H566v-60h260v60z"></path>
               </svg>
-              PinkLock
+              KYC & Audit
             </a>
           </li>
 
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              Create Lock
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              Token
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              Liquidity
-            </a>
-          </li>
           <li className="aside_list_item">
             <a href="#" className="aside_list_action">
               <svg
@@ -128,58 +242,68 @@ function AsideBar(props) {
                 width={18}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M247 25.332c-.642.046-1.288.098-1.936.152-28.244 52.446-31.912 108.59-28.084 167.936 3.77 58.42 14.916 119.542 15.936 181.58h46.168c1.02-62.038 12.167-123.16 15.936-181.58 3.828-59.347.16-115.49-28.084-167.936-.648-.054-1.294-.106-1.936-.152V352h-18V25.332zm-23.795 3.51c-7.21 1.567-14.562 3.595-21.893 6.04l-2.398 2.88c-38.992 46.79-49.743 83.613-45.955 123.384 3.787 39.772 23.27 83.214 47.31 139.31l4.45 11.458c.898 3.188 4.327 9.14 7.594 15.463-3.76-44.326-10.457-88.814-13.294-132.797-3.65-56.57-.748-112.657 24.185-165.738zm65.59 0c24.933 53.08 27.835 109.168 24.185 165.738-2.837 43.983-9.534 88.47-13.294 132.797 3.267-6.324 6.696-12.275 7.595-15.463l4.45-11.46c24.04-56.094 43.523-99.536 47.31-139.308 3.79-39.77-6.962-76.593-45.954-123.384l-2.4-2.88c-7.33-2.445-14.682-4.473-21.89-6.04zM167.5 49.422c-3.667 1.97-7.256 4.04-10.73 6.21C126.256 74.705 105 100.5 105 128c0 61.75 22.053 90.394 49.773 122.074 2.808 3.21 5.702 6.47 8.608 9.76-14.478-34.99-25.395-66.073-28.34-96.98-3.537-37.152 5.253-73.565 32.46-113.432zm177 0c27.207 39.867 35.997 76.28 32.46 113.432-2.945 30.907-13.862 61.99-28.34 96.98 2.905-3.29 5.8-6.55 8.607-9.76C384.947 218.394 407 189.75 407 128c0-27.5-21.256-53.296-51.77-72.367-3.474-2.172-7.063-4.24-10.73-6.21zM224 393v37h21.424v-37H224zm42.576 0v37H288v-37h-21.424zM224 448v44h64v-44h-64z" />
-              </svg>
-              Pink Airdrop
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              Create Airdrop
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              {" "}
-              Airdrop List
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              {" "}
-              Leaderboard
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              Pink Anti-Bot
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
-              Pools Alert
-            </a>
-          </li>
-
-          <li className="aside_list_item">
-            <a href="#" className="aside_list_action">
+                <path
+                  fill="none"
+                  strokeLinejoin="round"
+                  strokeWidth={32}
+                  d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z"
+                />
+                <path
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={32}
+                  d="M256 56v120a32 32 0 0032 32h120m-232 80h160m-160 80h160"
+                />
+              </svg>{" "}
               Docs
             </a>
           </li>
 
           <li className="aside_list_item">
             <a href="#" className="aside_list_action">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth={0}
+                viewBox="0 0 24 24"
+                className="ant-menu-item-icon"
+                height={18}
+                width={18}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    fillRule="nonzero"
+                    d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 2C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-3.11-8.83l-2.498-.779c-.54-.165-.543-.537.121-.804l9.733-3.76c.565-.23.885.061.702.79l-1.657 7.82c-.116.557-.451.69-.916.433l-2.551-1.888-1.189 1.148c-.122.118-.221.219-.409.244-.187.026-.341-.03-.454-.34l-.87-2.871-.012.008z"
+                  />
+                </g>
+              </svg>
               Telegram
             </a>
           </li>
 
           <li className="aside_list_item">
             <a href="#" className="aside_list_action">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth={0}
+                viewBox="0 0 24 24"
+                className="ant-menu-item-icon"
+                height={18}
+                width={18}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    fillRule="nonzero"
+                    d="M15.3 5.55a2.9 2.9 0 0 0-2.9 2.847l-.028 1.575a.6.6 0 0 1-.68.583l-1.561-.212c-2.054-.28-4.022-1.226-5.91-2.799-.598 3.31.57 5.603 3.383 7.372l1.747 1.098a.6.6 0 0 1 .034.993L7.793 18.17c.947.059 1.846.017 2.592-.131 4.718-.942 7.855-4.492 7.855-10.348 0-.478-1.012-2.141-2.94-2.141zm-4.9 2.81a4.9 4.9 0 0 1 8.385-3.355c.711-.005 1.316.175 2.669-.645-.335 1.64-.5 2.352-1.214 3.331 0 7.642-4.697 11.358-9.463 12.309-3.268.652-8.02-.419-9.382-1.841.694-.054 3.514-.357 5.144-1.55C5.16 15.7-.329 12.47 3.278 3.786c1.693 1.977 3.41 3.323 5.15 4.037 1.158.475 1.442.465 1.973.538z"
+                  />
+                </g>
+              </svg>
               Twitter
             </a>
           </li>

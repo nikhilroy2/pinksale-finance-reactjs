@@ -4,7 +4,7 @@ aside#AsideBar {
   overflow: auto;
   height: 100%;
   position: fixed;
-  top: 0px;
+  top: 70px;
   left: 0px;
   z-index: 10;
   flex: 0 0 200px;
@@ -16,11 +16,29 @@ aside#AsideBar {
     margin: 0;
     padding: 0;
     .aside_list_item {
-      margin-left: 24px;
+      padding-left: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 15px;
+      flex-grow: 1;
+      .dropdown_list{
+        display: none;
+      }
+      i {
+        transition: 0.3s;
+        &.active_icon {
+          transform: scaleY(-1);
+        }
+      }
+      &:active {
+        background: #fff0f3;
+      }
       .aside_list_action {
+        transition: all 0s linear;
         display: inline-flex;
         align-items: center;
-        padding: 16px 0px;
+        padding: 10px 0px;
         text-decoration: none;
         color: var(--text-color);
         opacity: 1;
@@ -31,9 +49,19 @@ aside#AsideBar {
         transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1), ease,
           ease;
         transition-delay: 0s, 0s, 0s;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        font-size: 16px;
         img,
         svg {
           margin-right: 10px;
+        }
+      }
+      &:hover {
+        .aside_list_action {
+          color: #f95192;
         }
       }
     }

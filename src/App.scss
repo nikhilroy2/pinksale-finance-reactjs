@@ -55,3 +55,29 @@ body {
 }
 
 // .............................Global Styleing ..............End
+
+// button styling
+
+.nav_btn {
+  border: none;
+  outline: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 16px;
+  background: var(--red-button-bg-color);
+  color: var(--red-button-text-color);
+  margin-right: 15px;
+  font-weight: bold;
+  svg, img {
+    margin-right: 5px;
+  }
+  &.nav_btn_light {
+    background: var(--network-button-bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+  }
+}

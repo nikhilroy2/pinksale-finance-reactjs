@@ -4,7 +4,7 @@ aside#AsideBar {
   overflow: auto;
   height: 100%;
   position: fixed;
-  top: 0px;
+  top: 70px;
   left: 0px;
   z-index: 10;
   -webkit-box-flex: 0;
@@ -22,17 +22,50 @@ aside#AsideBar .aside_list {
 }
 
 aside#AsideBar .aside_list .aside_list_item {
-  margin-left: 24px;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 15px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+aside#AsideBar .aside_list .aside_list_item .dropdown_list {
+  display: none;
+}
+
+aside#AsideBar .aside_list .aside_list_item i {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+aside#AsideBar .aside_list .aside_list_item i.active_icon {
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+
+aside#AsideBar .aside_list .aside_list_item:active {
+  background: #fff0f3;
 }
 
 aside#AsideBar .aside_list .aside_list_item .aside_list_action {
+  -webkit-transition: all 0s linear;
+  transition: all 0s linear;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 16px 0px;
+  padding: 10px 0px;
   text-decoration: none;
   color: var(--text-color);
   opacity: 1;
@@ -46,10 +79,19 @@ aside#AsideBar .aside_list .aside_list_item .aside_list_action {
           transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1), ease, ease;
   -webkit-transition-delay: 0s, 0s, 0s;
           transition-delay: 0s, 0s, 0s;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 aside#AsideBar .aside_list .aside_list_item .aside_list_action img,
 aside#AsideBar .aside_list .aside_list_item .aside_list_action svg {
   margin-right: 10px;
+}
+
+aside#AsideBar .aside_list .aside_list_item:hover .aside_list_action {
+  color: #f95192;
 }
 /*# sourceMappingURL=AsideBar.css.map */
