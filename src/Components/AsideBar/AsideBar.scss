@@ -1,0 +1,41 @@
+aside#AsideBar {
+  background: var(--main-background-color);
+  color: var(--main-text-color);
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  flex: 0 0 200px;
+  max-width: 200px;
+  min-width: 200px;
+  width: 200px;
+  .aside_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .aside_list_item {
+      margin-left: 24px;
+      .aside_list_action {
+        display: inline-flex;
+        align-items: center;
+        padding: 16px 0px;
+        text-decoration: none;
+        color: var(--text-color);
+        opacity: 1;
+        transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+          margin 0.3s, color 0.3s;
+        transition-property: opacity, margin, color;
+        transition-duration: 0.3s, 0.3s, 0.3s;
+        transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1), ease,
+          ease;
+        transition-delay: 0s, 0s, 0s;
+        img,
+        svg {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

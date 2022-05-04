@@ -24,6 +24,18 @@ header#Header nav#HeaderNav .logo_link {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 10px;
+  color: var(--main-text-color);
+  text-decoration: none;
+}
+
+header#Header nav#HeaderNav .left_side img,
+header#Header nav#HeaderNav .right_side img,
+header#Header nav#HeaderNav .logo_link img {
+  margin-right: 10px;
 }
 
 header#Header nav#HeaderNav button,
@@ -50,5 +62,11 @@ header#Header nav#HeaderNav .btn_box .nav_btn {
   color: var(--red-button-bg-color);
   background: var(--red-button-text-color);
   margin-right: 15px;
+}
+
+header#Header nav#HeaderNav .toggle_btn {
+  background: transparent;
+  border: 0;
+  outline: 0;
 }
 /*# sourceMappingURL=Header.css.map */

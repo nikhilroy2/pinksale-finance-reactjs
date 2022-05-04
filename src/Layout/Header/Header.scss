@@ -12,6 +12,16 @@ header#Header {
     .right_side,
     .logo_link {
       @include flex-center-all();
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-left: 10px;
+      color: var(--main-text-color);
+      text-decoration: none;
+
+      img {
+        margin-right: 10px;
+      }
     }
     button,
     a {
@@ -32,6 +42,11 @@ header#Header {
         background: var(--red-button-text-color);
         margin-right: 15px;
       }
+    }
+    .toggle_btn {
+      background: transparent;
+      border: 0;
+      outline: 0;
     }
   }
 }
