@@ -22,7 +22,7 @@ aside#AsideBar {
       align-items: center;
       padding-right: 15px;
       flex-grow: 1;
-      .dropdown_list{
+      .dropdown_list {
         display: none;
       }
       i {
@@ -61,6 +61,59 @@ aside#AsideBar {
       }
       &:hover {
         .aside_list_action {
+          color: #f95192;
+        }
+      }
+    }
+  }
+  .aside_control {
+    height: 80px;
+    width: 100%;
+    // border: solid;
+    bottom: 70px;
+    left: 0px;
+    position: absolute;
+    padding: 16px 16px 8px;
+    background: var(--main-background-color);
+    z-index: 2;
+    .flex_box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a {
+        color: #f95192;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 13px;
+        display: inline-flex;
+        align-items: center;
+        img {
+          margin-right: 5px;
+        }
+        &:hover {
+          color: #363636;
+        }
+      }
+      strong {
+        color: var(---main-text-color);
+        font-size: 13px;
+        font-weight: 700;
+      }
+    }
+    .flex_box_theme_control {
+      display: flex;
+      justify-content: flex-end;
+      button {
+        cursor: pointer;
+      }
+      .light_theme {
+        color: #f95192;
+      }
+      &.dark_theme_enable {
+        .light_theme {
+          color: var(---main-text-color);
+        }
+        .dark_theme {
           color: #f95192;
         }
       }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AsideBar.css";
 function AsideBar(props) {
   // const aside_object = [
@@ -24,6 +24,16 @@ function AsideBar(props) {
   // PinkAirdrop
   const [isPinkAirdropDropdown, setPinkAirdropDropdown] = useState(false);
 
+  // .......... theme controling
+
+  const [IsDark, setIsDark] = useState(false);
+  useEffect(() => {
+    if (IsDark) {
+      document.body.classList.add("dark_theme_body");
+    } else {
+      document.body.classList.remove("dark_theme_body");
+    }
+  }, [IsDark]);
   return (
     <aside id="AsideBar">
       <div className="wrapper">
@@ -217,9 +227,9 @@ function AsideBar(props) {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 1024 1024"
-                class="ant-menu-item-icon"
+                className="ant-menu-item-icon"
                 height="18"
                 width="18"
                 xmlns="http://www.w3.org/2000/svg"
@@ -308,6 +318,77 @@ function AsideBar(props) {
             </a>
           </li>
         </ul>
+        <div className="aside_control">
+          <div className="flex_box">
+            <div className="flex_box_item">
+              <a href="#">
+                <img
+                  style={{ height: "18px" }}
+                  src={require("../../Static/img/pinkswap.a95de4f3.png")}
+                  alt="img"
+                />{" "}
+                <span> PINKSALE</span>
+              </a>
+            </div>
+            <div className="flex_box_item">
+              <strong>$386.49</strong>
+            </div>
+          </div>
+          <div
+            className={`flex_box_theme_control ${
+              IsDark ? "dark_theme_enable" : ""
+            }`}
+          >
+            <button className="light_theme" onClick={() => setIsDark(false)}>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth={0}
+                viewBox="0 0 512 512"
+                height={20}
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeMiterlimit={10}
+                  strokeWidth={32}
+                  d="M256 48v48m0 320v48m147.08-355.08l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48m-320 0H48m355.08 147.08l-33.94-33.94M142.86 142.86l-33.94-33.94"
+                />
+                <circle
+                  cx={256}
+                  cy={256}
+                  r={80}
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeMiterlimit={10}
+                  strokeWidth={32}
+                />
+              </svg>
+            </button>
+            /
+            <button className="dark_theme" onClick={() => setIsDark(true)}>
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth={0}
+                viewBox="0 0 512 512"
+                height={18}
+                width={18}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={32}
+                  d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </aside>
   );

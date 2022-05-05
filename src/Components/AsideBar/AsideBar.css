@@ -94,4 +94,79 @@ aside#AsideBar .aside_list .aside_list_item .aside_list_action svg {
 aside#AsideBar .aside_list .aside_list_item:hover .aside_list_action {
   color: #f95192;
 }
+
+aside#AsideBar .aside_control {
+  height: 80px;
+  width: 100%;
+  bottom: 70px;
+  left: 0px;
+  position: absolute;
+  padding: 16px 16px 8px;
+  background: var(--main-background-color);
+  z-index: 2;
+}
+
+aside#AsideBar .aside_control .flex_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside#AsideBar .aside_control .flex_box a {
+  color: #f95192;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 13px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside#AsideBar .aside_control .flex_box a img {
+  margin-right: 5px;
+}
+
+aside#AsideBar .aside_control .flex_box a:hover {
+  color: #363636;
+}
+
+aside#AsideBar .aside_control .flex_box strong {
+  color: var(---main-text-color);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+aside#AsideBar .aside_control .flex_box_theme_control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+aside#AsideBar .aside_control .flex_box_theme_control button {
+  cursor: pointer;
+}
+
+aside#AsideBar .aside_control .flex_box_theme_control .light_theme {
+  color: #f95192;
+}
+
+aside#AsideBar .aside_control .flex_box_theme_control.dark_theme_enable .light_theme {
+  color: var(---main-text-color);
+}
+
+aside#AsideBar .aside_control .flex_box_theme_control.dark_theme_enable .dark_theme {
+  color: #f95192;
+}
 /*# sourceMappingURL=AsideBar.css.map */
