@@ -279,3 +279,13 @@ button {
     }
   }
 }
+
+// link classes
+
+.link_action_text {
+  color: #f95192;
+  text-decoration: none;
+  &:hover {
+    color: #363636;
+  }
+}

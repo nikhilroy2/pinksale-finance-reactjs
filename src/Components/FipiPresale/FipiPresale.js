@@ -177,6 +177,117 @@ function FipiPresale(props) {
               </div>
             </div>
           </div>
+
+          <div className="card_body">
+            <ul className="card_body_list">
+              <li>
+                <span>Presale Address</span>
+
+                <a className="link_action_text" href="#">
+                  0x66d117b2e8d0b59be335978df69273f513e719ec
+                </a>
+              </li>
+
+              <li>
+                <span>Token Name</span>
+
+                <span>$FiPi</span>
+              </li>
+
+              <li>
+                <span>Token Symbol</span>
+
+                <span>FiPi</span>
+              </li>
+
+              <li>
+                <span>Token Decimals</span>
+
+                <span>9</span>
+              </li>
+
+              <li>
+                <span>Token Address</span>
+
+                <span>
+                  <a href="#" className="link_action_text">
+                    0xbB9524b540a907d3648B15C679437261FC443aa6
+                  </a>
+                  <small>(Do not send BNB to the token address!)</small>
+                </span>
+              </li>
+
+              <li>
+                <span>Total Supply</span>
+
+                <span>208,460,915.08227 URF</span>
+              </li>
+
+              <li>
+                <span>Tokens For Presale</span>
+
+                <span>100,000,000 URF</span>
+              </li>
+
+              <li>
+                <span>Tokens For Liquidity</span>
+
+                <span>51,000,000 URF</span>
+              </li>
+
+              <li>
+                <span>Soft Cap</span>
+
+                <span>250 BNB</span>
+              </li>
+
+              <li>
+                <span>Max Owner Receive</span>
+
+                <span>490 BNB</span>
+              </li>
+
+              <li>
+                <span>Amount Till Rebalance</span>
+
+                <span>471.28061987094577 BNB</span>
+              </li>
+
+              <li>
+                <span>Presale Start Time</span>
+
+                <span>2022.05.01 15:00 (UTC)</span>
+              </li>
+
+              <li>
+                <span>Presale End Time</span>
+
+                <span>2022.05.04 15:00 (UTC)</span>
+              </li>
+
+              <li>
+                <span>Listing On</span>
+
+                <a className="link_action_text" href="#">
+                  Pancakeswap
+                </a>
+              </li>
+
+              <li>
+                <span>Liquidity Percent</span>
+
+                <span>51%</span>
+              </li>
+
+              <li>
+                <span>Liquidity Unlocked Time</span>
+
+                <a className="link_action_text" href="#">
+                  2025.01.28 16:17 UTC (in 3 years)
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

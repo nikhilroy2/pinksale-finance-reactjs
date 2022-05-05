@@ -1,0 +1,35 @@
+#TokenMetrics {
+  color: var(--main-text-color);
+  background: var(--main-background-color);
+  border: 1px solid var(--main-border-color);
+  margin-bottom: 24px;
+  .wrapper_title {
+    padding: 16px 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-bottom: var(--divider-border);
+    h3 {
+      color: var(--main-text-color);
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+  .wrapper_body {
+    padding: 16px 24px;
+    .canvas_wrapper {
+      width: 400px;
+      height: 400px;
+      margin: 0.5rem auto;
+      position: relative;
+      .canvas_text {
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 50px);
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        color: #f95192;
+      }
+    }
+  }
+}

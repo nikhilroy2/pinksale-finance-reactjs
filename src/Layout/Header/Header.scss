@@ -5,6 +5,8 @@
 }
 header#Header {
   background: var(--main-background-color);
+  position: sticky;
+  top: 0;
   nav#HeaderNav {
     height: 70px;
     padding: 0px 15px;
@@ -28,12 +30,12 @@ header#Header {
       cursor: pointer;
     }
     .btn_box {
-      
     }
     .toggle_btn {
       background: transparent;
       border: 0;
       outline: 0;
+      color: var(--main-text-color);
     }
   }
 }

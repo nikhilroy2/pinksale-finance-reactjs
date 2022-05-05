@@ -3,6 +3,7 @@
   background: var(--main-background-color);
   border: 1px solid var(--main-border-color);
   padding: 24px;
+  margin-bottom: 24px;
   .fipi_card {
     .card_title {
       display: flex;
@@ -84,6 +85,23 @@
         font-size: 14px;
         line-height: 1.5715;
         margin-bottom: 1rem;
+      }
+    }
+    .card_body {
+      .card_body_list {
+        & > li {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          small {
+            display: block;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            color: #3298dc;
+            text-align: right;
+          }
+        }
       }
     }
   }

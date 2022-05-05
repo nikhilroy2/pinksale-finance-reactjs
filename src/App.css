@@ -305,4 +305,13 @@ button {
 .social_list .social_link:hover {
   color: #363636;
 }
+
+.link_action_text {
+  color: #f95192;
+  text-decoration: none;
+}
+
+.link_action_text:hover {
+  color: #363636;
+}
 /*# sourceMappingURL=App.css.map */
