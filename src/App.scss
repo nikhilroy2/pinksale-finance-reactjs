@@ -52,6 +52,7 @@ body {
 
   // styling .......
   background: var(--bg-color);
+  font-size: 14px;
 }
 ul,
 ol {
@@ -70,6 +71,7 @@ ol {
   }
   .section_lg_grow {
     width: 100%;
+    margin-right: 24px;
   }
   .section_sm_item {
     min-width: 380px;
@@ -176,5 +178,69 @@ button {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+  }
+}
+
+// ........custom tooltip..........
+
+.custom_tooltip {
+  position: relative;
+
+  &::after {
+    content: attr(data-tooltip-text);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3f3f3f;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 3px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    border: 8px solid;
+    border-color: #3f3f3f transparent transparent transparent;
+    bottom: calc(100% - 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+  }
+  &:hover {
+    &::after,
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+// social list
+
+.social_list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0px;
+  > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+  .social_link {
+    color: #f95192;
+    cursor: pointer;
+    svg {
+      $s: 20px;
+      width: $s;
+      height: $s;
+    }
+    &:hover {
+      color: #363636;
+    }
   }
 }

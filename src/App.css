@@ -49,6 +49,7 @@ nav {
 
 body {
   background: var(--bg-color);
+  font-size: 14px;
 }
 
 ul,
@@ -71,6 +72,7 @@ ol {
 
 .section_wrapper .section_lg_grow {
   width: 100%;
+  margin-right: 24px;
 }
 
 .section_wrapper .section_sm_item {
@@ -197,5 +199,75 @@ button {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+}
+
+.custom_tooltip {
+  position: relative;
+}
+
+.custom_tooltip::after {
+  content: attr(data-tooltip-text);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #3f3f3f;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.custom_tooltip::before {
+  content: "";
+  position: absolute;
+  border: 8px solid;
+  border-color: #3f3f3f transparent transparent transparent;
+  bottom: calc(100% - 5px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.custom_tooltip:hover::after, .custom_tooltip:hover::before {
+  opacity: 1;
+}
+
+.social_list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem 0px;
+}
+
+.social_list > *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.social_list .social_link {
+  color: #f95192;
+  cursor: pointer;
+}
+
+.social_list .social_link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social_list .social_link:hover {
+  color: #363636;
 }
 /*# sourceMappingURL=App.css.map */
