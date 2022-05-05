@@ -29,9 +29,9 @@ function AsideBar(props) {
   const [IsDark, setIsDark] = useState(false);
   useEffect(() => {
     if (IsDark) {
-      document.body.classList.add("dark_theme_body");
+      document.documentElement.classList.add("dark_theme_body");
     } else {
-      document.body.classList.remove("dark_theme_body");
+      document.documentElement.classList.remove("dark_theme_body");
     }
   }, [IsDark]);
   return (
