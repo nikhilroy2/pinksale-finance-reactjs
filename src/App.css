@@ -142,6 +142,12 @@ button {
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  .nav_btn {
+    margin-right: 5px;
+  }
+}
+
 .nav_btn svg,
 .nav_btn img {
   margin-right: 5px;
@@ -175,7 +181,7 @@ button {
 .text_alert {
   background-color: var(--alert-warning-bg-color);
   border: var(--alert-warning-border);
-  color: var(--main-text-color);
+  color: var(--alert-warning-text-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

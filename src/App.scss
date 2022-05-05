@@ -134,6 +134,9 @@ button {
   color: var(--red-button-text-color);
   margin-right: 15px;
   font-weight: bold;
+  @media (max-width: 768px) {
+    margin-right: 5px;
+  }
   svg,
   img {
     margin-right: 5px;
@@ -164,7 +167,7 @@ button {
 .text_alert {
   background-color: var(--alert-warning-bg-color);
   border: var(--alert-warning-border);
-  color: var(--main-text-color);
+  color: var(--alert-warning-text-color);
   display: flex;
   align-items: center;
   padding: 8px 15px;

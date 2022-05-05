@@ -1,0 +1,24 @@
+#MenuBar {
+  border-top: 1px solid var(--main-border-color);
+  z-index: 1999;
+  position: relative;
+  .menubar_list {
+    display: flex;
+    align-items: center;
+    margin-left: 180px;
+    color: var(--main-text-color);
+    a {
+      display: inline-block;
+      padding: 10px 8px;
+      font-size: 13px;
+      text-decoration: none;
+      color: var(--main-text-color);
+      .name {
+        color: #f95192;
+        &:hover {
+          color: #363636;
+        }
+      }
+    }
+  }
+}

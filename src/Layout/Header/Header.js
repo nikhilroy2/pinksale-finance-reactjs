@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Header.css";
 
 import AsideBar from "../../Components/AsideBar/AsideBar";
-
+import MenuBar from "../../Components/MenuBar/MenuBar";
 function Header(props) {
   const [isToggle, setIsToggle] = useState(true);
 
@@ -45,12 +45,12 @@ function Header(props) {
               src={require("../../Static/img/pinkswap.a95de4f3.png")}
               alt="img"
             />
-            PinkSale
+            <span className="name">PinkSale</span>
           </a>
         </div>
 
         <div className="right_side">
-          <div className="btn_box">
+          <div className="btn_box dropdown_box">
             <button className="nav_btn">
               {" "}
               <svg
@@ -68,19 +68,41 @@ function Header(props) {
                 <path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z" />
                 <path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z" />
               </svg>{" "}
-              Create
+              <span className="name">Create</span>
             </button>
+            <ul className="dropdown_box_list">
+              <li>
+                <a href="#">Launchpad</a>
+              </li>
+
+              <li>
+                <a href="#">Fair Launch</a>
+              </li>
+
+              <li>
+                <a href="#">Token</a>
+              </li>
+
+              <li>
+                <a href="#">PinkLock</a>
+              </li>
+
+              <li>
+                <a href="#">PinkPad</a>
+              </li>
+            </ul>
           </div>
           <div className="btn_box">
             <button className="nav_btn nav_btn_light">
-              <img width={18}
+              <img
+                width={18}
                 src={require("../../Static/img/ic-bsc.419dfaf2.png")}
                 alt="img"
               />
-              BSC MAINNET
+              <span className="name">BSC MAINNET</span>
             </button>
           </div>
-          <div className="btn_box">
+          <div className="btn_box connect_btn">
             <button className="nav_btn">Connect</button>
           </div>
         </div>
@@ -89,6 +111,8 @@ function Header(props) {
       {/* Aside bar below */}
 
       <AsideBar></AsideBar>
+
+      <MenuBar></MenuBar>
     </header>
   );
 }

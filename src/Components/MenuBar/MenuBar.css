@@ -1,0 +1,33 @@
+#MenuBar {
+  border-top: 1px solid var(--main-border-color);
+  z-index: 1999;
+  position: relative;
+}
+
+#MenuBar .menubar_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 180px;
+  color: var(--main-text-color);
+}
+
+#MenuBar .menubar_list a {
+  display: inline-block;
+  padding: 10px 8px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+#MenuBar .menubar_list a .name {
+  color: #f95192;
+}
+
+#MenuBar .menubar_list a .name:hover {
+  color: #363636;
+}
+/*# sourceMappingURL=MenuBar.css.map */
